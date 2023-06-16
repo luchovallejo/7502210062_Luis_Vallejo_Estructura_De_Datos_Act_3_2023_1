@@ -4,6 +4,7 @@
  */
 package Parte_3;
 
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -38,8 +39,13 @@ public class Punto_2 {
         person.add(16);
         System.out.println("Estos son los numeros ya ordenados y sus multiplos: ");
         listaPersonal((List<Integer>) person);
-
-        System.out.print("Estos son todos los elementos en la cola: " + person);
+        
+        //conversion de cola FIFO a LIFO
+        ArrayDeque<Integer> nuevaPerson = new ArrayDeque<>();
+             while (!person.isEmpty()) {
+               nuevaPerson.addFirst(person.remove());
+           }
+        System.out.print("Estos son todos los elementos en la cola: " + nuevaPerson);
         System.out.println();
           
         System.out.println("Ingrese un elemento para agregar en la parte superior de la cola:");
@@ -47,20 +53,21 @@ public class Punto_2 {
         String agregado = scanner.nextLine();
         person.push(person.size());
           
-        System.out.println("Elementos de la cola con el numeros agregado: " + person);
+        System.out.println("Elementos de la cola con el numeros agregado: " + nuevaPerson);
           
         // Pop - Eliminar y devolver el elemento en la parte superior de la cola
-        int quitado = person.pop();
+        int quitado = nuevaPerson.pop();
         System.out.println("Elemento removido de la cola: " + quitado);
-        System.out.println("El siguiente elemento que le sigue despues del anterior es: " + person);
+        System.out.println("El siguiente elemento que le sigue despues del anterior es: " + nuevaPerson);
           
         // Peek - Acceder al elemento en la parte superior de la cola sin eliminarlo
-        Integer acceder = person.peek();
+        Integer acceder = nuevaPerson.peek();
          System.out.println("Elemento accedido sin ser eliminado es: " + acceder);
           
         // IsEmpty - Verificar si la cola está vacía
         boolean llenaOvacia = person.isEmpty();
         System.out.println("La cola esta o no vacia? " + llenaOvacia);
+        
 
     }
     

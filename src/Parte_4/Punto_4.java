@@ -5,6 +5,7 @@
 package Parte_4;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -43,7 +44,7 @@ public class Punto_4 {
         
        
         System.out.println();
-        
+        Collections.sort(person);
         //Mostrando el tamaño de la pila
         System.out.println("este es el tamaño de la pila: " + person);
         //verificando si la cola está vacia y en caso que no lo esté dirá falso
@@ -52,7 +53,7 @@ public class Punto_4 {
         person.pop();
         //Busando un elemento
         System.out.println("Buscando un elemento de la lista: " + person.search(2));
-        System.out.println("Se eliminó el numero: 16");
+        System.out.println("Se eliminó el numero: " + person.pop() + " y 20");
         //Accediendo a un elemento en la parte superior sin tener que eliminarlo
         System.out.println("Último en ser agregado: " + person.peek());
         System.out.print("Asi queda la lista ahora: " + person);
