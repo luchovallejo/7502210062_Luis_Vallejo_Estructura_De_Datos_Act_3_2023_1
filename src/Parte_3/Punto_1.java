@@ -76,10 +76,6 @@ public class Punto_1 {
             if(i%6==0){
                 System.out.println("El numero " +i+ " es multiplo de 6");
             }
-            /*
-            if(i%4!=0 || i%6 != 0){
-                System.out.println("este numero "+i+" no es multiplo de 4 y 6");
-            } */
         }
     }
 }
